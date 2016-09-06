@@ -22,4 +22,3 @@ def sum_multiples_in_range(range_, *denominators):
 if __name__ == '__main__':
     print sum_multiples_in_range(1000, 3, 5)
 
-
