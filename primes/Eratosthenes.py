@@ -1,12 +1,17 @@
+import math
+def primesTo(upTo):
+    # to offset lists starting at 0
+    upTo += 1
 
-def sieve(primes_wanted):
-    known_primes = [2, 3, 5]
+    primes = [True]*upTo
+    primes[0] = False
+    primes[1] = False
+    for number in xrange(2, int(math.sqrt(upTo))+1):
+        if primes[number]:
+            for nonPrime in xrange(number*2, upTo, number):
+                primes[nonPrime] = False
 
-    wheel1 = [1, 13, 17, 29, 37, 41, 49, 53]
-    wheel2 = [7, 19, 31, 43]
-    wheel3 = [11, 23, 47, 59]
-
-
+    return [position for position, value in enumerate(primes) if value]
 
 
 
